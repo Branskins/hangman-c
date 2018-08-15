@@ -12,6 +12,8 @@ std::string ocultaPalabra(int cantidad, std::string caracter);
 std::string metodoMiedo(std::string cortada, std::string palabra, std::string letra);
 bool adivinado(std::string letra, std::vector<std::string> &letrasAsertadas);
 
+
+
 int main() {
 
 	std::vector<std::string> palabras; // Crea un vector vacio llamada palabras
@@ -36,14 +38,16 @@ int main() {
 			std::cout << "Ya encontro la letra " << intentoLetra;
 		else {
 			letrasAsertadas.push_back(intentoLetra);
-			if (!(palabraSecreta.rfind(intentoLetra) == intentoLetra.npos))
+			if (!(palabraSecreta.rfind(intentoLetra) == intentoLetra.npos)) {
+				palabraOculta = metodoMiedo(palabraOculta, palabraSecreta, intentoLetra);
 				std::cout << "Buen intento!";
+			}
 			else {
 				std::cout << "Mala suerte, incorrecto";
 				intentos++;
 			}
 		}
-		palabraOculta = metodoMiedo(palabraOculta, palabraSecreta, intentoLetra);
+		// palabraOculta = metodoMiedo(palabraOculta, palabraSecreta, intentoLetra);
 		system("cls");
 	}
 
