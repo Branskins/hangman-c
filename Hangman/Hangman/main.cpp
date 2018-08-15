@@ -6,13 +6,10 @@
 #include<ctime>
 
 void cargaPalabras(std::vector<std::string> &palabras);
-std::string imprimePalabras(std::vector<std::string> &palabras);
 int algoritmoSeleccion(int cantidadPalabras);
 std::string ocultaPalabra(int cantidad, std::string caracter);
 std::string metodoMiedo(std::string cortada, std::string palabra, std::string letra);
 bool adivinado(std::string letra, std::vector<std::string> &letrasAsertadas);
-
-
 
 int main() {
 
@@ -47,7 +44,6 @@ int main() {
 				intentos++;
 			}
 		}
-		// palabraOculta = metodoMiedo(palabraOculta, palabraSecreta, intentoLetra);
 		system("cls");
 	}
 
@@ -70,11 +66,6 @@ void cargaPalabras(std::vector<std::string> &palabras)
 	flujoEntrada.close();
 }
 
-std::string imprimePalabras(std::vector<std::string>& palabras)
-{
-	return std::string();
-}
-
 // Crea un flujo stringstream para almacenar todas la palabras
 std::string ocultaPalabra(std::vector<std::string>& palabras)
 {
@@ -92,6 +83,7 @@ int algoritmoSeleccion(int cantidadPalabras)
 	return rand() % cantidadPalabras;
 }
 
+// Oculta la palabra con caracteres
 std::string ocultaPalabra(int cantidad, std::string caracter)
 {
 	std::string oculta = "";
@@ -100,7 +92,7 @@ std::string ocultaPalabra(int cantidad, std::string caracter)
 	return oculta;
 }
 
-// Imprimir n veces un caracter escogido
+// Imprime n veces un caracter escogido
 std::string imprimeRepetida(int cantidad, std::string caracter)
 {
 	std::string linea = "";
@@ -109,7 +101,7 @@ std::string imprimeRepetida(int cantidad, std::string caracter)
 	return linea;
 }
 
-// 
+// Algoritmo para modificar la palabra con la letras asertadas 
 std::string metodoMiedo(std::string cortada, std::string palabra, std::string letra)
 {
 	if (cortada.length() == 0)
@@ -122,6 +114,7 @@ std::string metodoMiedo(std::string cortada, std::string palabra, std::string le
 	}
 }
 
+// Revisa si una letra digitada ya fue asertada correctamente
 bool adivinado(std::string letra, std::vector<std::string>& letrasAsertadas)
 {
 	std::vector<std::string>::iterator iterLetras;
