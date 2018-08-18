@@ -16,8 +16,9 @@ void Hangman::empezar()
 {
 	int intentos = 0;
 	while (!correcta() && intentos < intentosPosibles) {
+		encabezado();
 		char intentoLetra;
-		std::cout << "La palabra correcta es = " << palabraSecreta << std::endl;
+		// std::cout << "La palabra correcta es = " << palabraSecreta << std::endl;
 		std::cout << "Ha completado = " << palabraOculta << std::endl;
 		std::cout << "Intentos restantes = " << intentosPosibles - intentos << std::endl;
 		std::cout << "Digite una letra: ";
@@ -41,6 +42,7 @@ void Hangman::empezar()
 		}
 		system("cls");
 	}
+	std::cout << "PALABRA SECRETA: " << palabraSecreta << std::endl;
 	std::cout << ((correcta()) ? "Felicidades!" : "Suerte en la proxima") << std::endl;
 	system("pause");
 }
@@ -118,4 +120,11 @@ bool Hangman::adivinado(char letra)
 bool Hangman::correcta()
 {
 	return palabraOculta == palabraSecreta;
+}
+
+void Hangman::encabezado()
+{
+	std::cout << "+--------------------------------------------------------+\n";
+	std::cout << "|" << std::setw(34) << ">>AHORCADO<<" << std::setw(24) << "|\n";
+	std::cout << "+--------------------------------------------------------+\n";
 }

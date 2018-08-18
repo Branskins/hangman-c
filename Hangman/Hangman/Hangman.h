@@ -7,6 +7,7 @@
 #include<ctime>
 #include<iostream>
 #include<algorithm>
+#include<iomanip>
 
 class Hangman {
 private:
@@ -27,6 +28,7 @@ public:
 	bool adivinado(char letra);
 	// Revisa si la palabra oculta es igual a la palabra secreta
 	bool correcta();
+	void encabezado();
 };
 #endif // !HANGMAN_H
 
